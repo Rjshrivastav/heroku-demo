@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Health Insurence lead</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Upper_Age" placeholder="Upper_Age" required="required" />
+        <input type="text" name="Lower_Age" placeholder="Lower_Age" required="required" />
+		<input type="text" name="Reco_Policy_Cat" placeholder="Reco_Policy_Cat" required="required" />
+		<input type="text" name="Reco_Policy_Premium" placeholder="Reco_Policy_Premium" required="required" />
+		<input type="text" name="Is_Spouse" placeholder="Is_Spouse" required="required" />
+		<input type="text" name="Region_Code" placeholder="Region_Code" required="required" />
+		<input type="text" name="Accomodation_Type_Owned" placeholder="Accomodation_Type_Owned" required="required" />
+		<input type="text" name="Accomodation_Type_Rented" placeholder="Accomodation_Type_Rented" required="required" />
+		<input type="text" name="Health Indicator_0" placeholder="Health Indicator_0" required="required" />
+		<input type="text" name="Health Indicator_1" placeholder="Health Indicator_1" required="required" />
+		<input type="text" name="Health Indicator_2" placeholder="Health Indicator_2" required="required" />
+		<input type="text" name="Health Indicator_3" placeholder="Health Indicator_3" required="required" />
+		<input type="text" name="Health Indicator_4" placeholder="Health Indicator_4" required="required" />
+		<input type="text" name="Holding_Policy_Type_1.0" placeholder="Holding_Policy_Type_1.0" required="required" />
+		<input type="text" name="Holding_Policy_Type_2.0" placeholder="Holding_Policy_Type_2.0" required="required" />
+		<input type="text" name="Holding_Policy_Type_3.0" placeholder="Holding_Policy_Type_3.0" required="required" />
+		<input type="text" name="Holding_Policy_Type_4.0" placeholder="Holding_Policy_Type_4.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_1.0" placeholder="Holding_Policy_Duration_1.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_2.0" placeholder="Holding_Policy_Duration_2.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_3.0" placeholder="Holding_Policy_Duration_3.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_4.0" placeholder="Holding_Policy_Duration_4.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_5.0" placeholder="Holding_Policy_Duration_5.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_6.0" placeholder="Holding_Policy_Duration_6.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_7.0" placeholder="Holding_Policy_Duration_7.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_8.0" placeholder="Holding_Policy_Duration_8.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_9.0" placeholder="Holding_Policy_Duration_9.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_10.0" placeholder="Holding_Policy_Duration_10.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_11.0" placeholder="Holding_Policy_Duration_11.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_12.0" placeholder="Holding_Policy_Duration_12.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_13.0" placeholder="Holding_Policy_Duration_13.0" required="required" />
+		<input type="text" name="Holding_Policy_Duration_14.0" placeholder="Holding_Policy_Duration_14.0" required="required" />
+		<input type="text" name="Reco_Insurance_Type_Individual" placeholder="Reco_Insurance_Type_Individual" required="required" />
+		<input type="text" name="Reco_Insurance_Type_Joint" placeholder="Reco_Insurance_Type_Joint" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
